@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Demo Test Plan" verbose="1">
+
+	<parameter name="text" value="Телевизоры"/>
+	<parameter name="model" value="Samsung"/>
+	<parameter name="price" value="1000"/>
+	<parameter name="sizefrom" value="39"/>
+	<parameter name="sizeto" value="42"/>
+	<parameter name="year" value="2013"/>
+	
+	<test name="Demo Test" preserve-order="true">
+		<classes>
+ 			<class name="demo.tests.SearchTest" />
+        </classes>
+	</test>
+</suite>
