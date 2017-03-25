@@ -21,7 +21,7 @@ public class ResultCatalogPage extends BaseForm {
     private String yearLocator = "//input[@class=\"schema-filter-control__item schema-filter__number-input\" and @placeholder = \"2010\"]";
     private String sizeLocatorFrom = "//*[contains(@class, 'schema-filter-control schema-filter-control_select')]//option[contains(.,'%s')]";
     private String sizeLocatorTo ="//*[contains(@class, 'schema-filter-control schema-filter-control_select')]/following-sibling::*[1]//option[contains(.,'%s')]";
-    private String tvLocator =".//*[@class='schema-product__group']//div[@class='schema-product__image']";
+    private String tvLocator ="//*[@id='schema-products']//div[@class='schema-product__title']/a";
 
     public ResultCatalogPage() {
         super(By.xpath("//h1[contains(., 'Телевизоры')]"), "Results Page");}
@@ -38,6 +38,18 @@ public class ResultCatalogPage extends BaseForm {
         btnSizeFrom.click();
         Button btnSizeTo = new Button(By.xpath(String.format(sizeLocatorTo, sizeto)), "SizeTo");
         btnSizeTo.click();
+         }
+
+    public String[] getList(){
+        browser.waitForPageToLoad();
+        List <WebElement> listTVtemp =  browser.getDriver().findElements(By.xpath(tvLocator));
+        int size = listTVtemp.size();
+        String[] listTV = new String[size];
+        for (int i=0;i < size; i++) {
+            List <WebElement> listTVtemp2 =  browser.getDriver().findElements(By.xpath(tvLocator));
+            listTV[i] = listTVtemp2.get(i).getAttribute("href");
+        }
+        return listTV;
     }
 
 
