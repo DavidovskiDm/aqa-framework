@@ -20,8 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class SearchTest extends BaseTest {
-      // private String locatorListTV = ".//*[@class='schema-product__group']//div[@class='schema-product__image']/a";
-   // private String locatorListTV = ".//*[@class='schema-product__title']//span/..";
+
 
 
         @Parameters({"text","model","price","sizefrom","sizeto","year"})
