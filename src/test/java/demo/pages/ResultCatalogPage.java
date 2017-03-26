@@ -46,6 +46,7 @@ public class ResultCatalogPage extends BaseForm {
         int size = listTVtemp.size();
         String[] listTV = new String[size];
         for (int i=0;i < size; i++) {
+            browser.waitForPageToLoad();
             List <WebElement> listTVtemp2 =  browser.getDriver().findElements(By.xpath(tvLocator));
             listTV[i] = listTVtemp2.get(i).getAttribute("href");
         }
