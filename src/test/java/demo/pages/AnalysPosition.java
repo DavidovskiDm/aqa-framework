@@ -1,19 +1,8 @@
 package demo.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import webdriver.BaseForm;
-import webdriver.Browser;
-import webdriver.elements.Button;
 import webdriver.elements.Label;
-import webdriver.elements.TextBox;
-
-import java.util.List;
-
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 /**
