@@ -25,11 +25,13 @@ public class SearchTest extends BaseTest {
 
         @Parameters({"text","model","price","sizefrom","sizeto","year"})
         public void runTest() {
-        logStep("Переход в Каталог");
+        logStep();
+        logger.info("Переход в Каталог");
         MainPage mainPage = new MainPage();
         mainPage.goToCatalog();
 
         logStep("Переход в раздкл Телевизоры");
+
         ResultsPage resultsPage = new ResultsPage();
         resultsPage.navigateText("Телевизоры");
 
