@@ -25,19 +25,20 @@ public class SearchTest extends BaseTest {
 
         @Parameters({"text","model","price","sizefrom","sizeto","year"})
         public void runTest() {
-        logStep();
+        logStep("переход в Каталог");
+
         MainPage mainPage = new MainPage();
         mainPage.goToCatalog();
 
-        logStep();
+        logStep("переход в раздел Телевизоры");
         ResultsPage resultsPage = new ResultsPage();
         resultsPage.navigateText("Телевизоры");
 
-        logStep();
+        logStep("Установка параметров фильтра выбора");
         ResultCatalogPage catalogPage = new ResultCatalogPage();
         catalogPage.setParametrs("Samsung", "1000","2013","39","42");
 
-        logStep();
+        logStep("Проверка результатов");
         String[] listTV = catalogPage.getList();
         logStep();
         for (int i=0; i < listTV.length; i++ ){
